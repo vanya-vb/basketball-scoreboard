@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+.wrapper,
+.team-container,
+.team-container,
+.score-container,
+.points-container {
+    display: flex;
+}
+
+body {
+    background-color: #1B244A;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    height: 100vh;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    min-width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-container {
+    width: 50%;
+    min-height: 380px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.score-container {
+    background-color: black;
+    width: 150px;
+    height: 120px;
+    color: #F94F6D;
+    font-size: 5rem;
+    border-radius: 5px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.points-container {
+    width: 150px;
+    justify-content: space-between;
+}
+
+.btn {
+    cursor: pointer;
+    border: 2px solid #9AABD8;
+    color: #9AABD8;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.points-container .btn {
+    font: inherit;
+    width: 45px;
+    height: 45px;
+}
+
+.btn.new-game-btn {
+    padding: 10px 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.new-game-btn:hover,
+.btn:hover {
+    background-color: #9AABD8;
+    color: #1B244A;
+}
