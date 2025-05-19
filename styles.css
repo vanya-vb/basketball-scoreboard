@@ -91,13 +91,16 @@ h2 {
 
 @media(max-width: 600px) {
     body {
+        width: 100vw;
         height: auto;
     }
+
     .wrapper {
         flex-direction: column;
+        width: 100%;
     }
 
     .team-container {
-        min-height: 350px;
+        height: auto;
     }
 }
