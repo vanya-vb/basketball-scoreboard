@@ -9,32 +9,32 @@ const pointsContainerTeam2 = team2Container.querySelector('.points-container');
 
 const newGameBtn = document.getElementById('new-game-btn');
 
-let scoreTeam1 = 0;
-let scoreTeam2 = 0;
+const team1 = {
+    score: 0,
+    container: scoreContainerTeam1,
+    pointsContainer: pointsContainerTeam1
+}
 
-pointsContainerTeam1.addEventListener('click', (e) => {
+const team2 = {
+    score: 0,
+    container: scoreContainerTeam2,
+    pointsContainer: pointsContainerTeam2
+}
+
+pointsContainerTeam1.addEventListener('click', (e) => handleScoreUpdate(e, team1));
+pointsContainerTeam2.addEventListener('click', (e) => handleScoreUpdate(e, team2));
+
+function handleScoreUpdate(e, team) {
     if (e.target.classList.contains("btn-1")) {
-        scoreTeam1++;
+        team.score++;
     } else if (e.target.classList.contains("btn-2")) {
-        scoreTeam1 += 2;
+        team.score += 2;
     } else if (e.target.classList.contains("btn-3")) {
-        scoreTeam1 += 3;
+        team.score += 3;
     }
 
-    render(scoreContainerTeam1, scoreTeam1)
-});
-
-pointsContainerTeam2.addEventListener('click', (e) => {
-    if (e.target.classList.contains("btn-1")) {
-        scoreTeam2++;
-    } else if (e.target.classList.contains("btn-2")) {
-        scoreTeam2 += 2;
-    } else if (e.target.classList.contains("btn-3")) {
-        scoreTeam2 += 3;
-    }
-
-    render(scoreContainerTeam2, scoreTeam2)
-});
+    render(team.container, team.score)
+}
 
 function render(container, score) {
     container.textContent = score;
@@ -43,10 +43,9 @@ function render(container, score) {
 newGameBtn.addEventListener('click', resetGame)
 
 function resetGame() {
-    scoreTeam1 = 0;
-    scoreContainerTeam1.textContent = scoreTeam1;
-
-    scoreTeam2 = 0;
-    scoreContainerTeam2.textContent = scoreTeam2;
+    [team1, team2].forEach(team => {
+        team.score = 0;
+        render(team.container, team.score);
+    })
 }
 
