@@ -7,7 +7,6 @@
 body,
 .wrapper,
 .team-container,
-.team-container,
 .score-container,
 .points-container {
     display: flex;
@@ -88,4 +87,17 @@ h2 {
 .btn:hover {
     background-color: #9AABD8;
     color: #1B244A;
+}
+
+@media(max-width: 600px) {
+    body {
+        height: auto;
+    }
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .team-container {
+        min-height: 350px;
+    }
 }
